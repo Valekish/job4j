@@ -1,5 +1,5 @@
 /**
- * Elementary calculator test
+ * Elementary calculator test.
  */
 
 package ru.job4j.calculator;
