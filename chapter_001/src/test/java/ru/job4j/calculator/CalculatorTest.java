@@ -4,7 +4,17 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
+/**
+ * Test
+ * @author Valentin Kirjan (valekishwork@mail.ru).
+ * @version $Id$.
+ * @since 18.03.19.
+ */
 public class CalculatorTest  {
+
+	/**
+	 * Test addition.
+	 */
     @Test
     public void whenAdd1Plus1Then2()  {
         Calculator calc = new Calculator();
@@ -12,6 +22,10 @@ public class CalculatorTest  {
         double expected = 2;
         assertThat(result, is(expected));
     }
+
+	/**
+	 * Test subtraction.
+	 */
 	@Test
 	public void whenSub2From4Then2() {
 		Calculator calc = new Calculator();
@@ -19,6 +33,10 @@ public class CalculatorTest  {
 		double expected = 2;
 		assertThat(result, is(expected));
 	}
+
+	/**
+	 * Test multiplication.
+	 */
 	@Test
 	public void whenMult2By3Then6() {
 		Calculator calc = new Calculator();
@@ -26,6 +44,10 @@ public class CalculatorTest  {
 		double expected = 6;
 		assertThat(result, is(expected));
 	}
+
+	/**
+	 * Test division.
+	 */
 	@Test
 	public void whenDiv2By2Then1() {
 		Calculator calc = new Calculator();

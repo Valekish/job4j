@@ -6,17 +6,15 @@ import static org.junit.Assert.assertThat;
 
 /**
  * Test
- * @author Valentin Kirjan (valekishwork@mail.ru)
- * @version $Id$
- * @since 0.1
+ * @author Valentin Kirjan (valekishwork@mail.ru).
+ * @version $Id$.
+ * @since 0.1.
  */
- 
 public class CalculateTest {
 	
  /**
- * Test echo
+ * Test echo.
  */
-
 @Test
  public void whenTakeNameThenThreeEchoPlusName() {
     String input = "Valentin Kirjan";
