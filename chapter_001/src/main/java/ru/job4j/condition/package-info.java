@@ -1,5 +1,6 @@
 /**
- * Point distance calculator test.
+ * Point distance calculator.
+ * Dummy bot.
  */
 
 package ru.job4j.condition;
