@@ -5,5 +5,4 @@
  * Triangle calculator test.
  * Max value out of 3 numbers test.
  */
-
 package ru.job4j.condition;
