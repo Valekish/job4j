@@ -13,15 +13,10 @@ public class Check {
      * @return значение массива.
      */
     public boolean mono(boolean[] data) {
-        boolean result = false;
+        boolean result = true;
         for (int index = 0; index < data.length - 1; index++) {
             if (data[index] != data[index + 1]) {
-                return result;
-            }
-            if (data[index] != data[data.length - 1]) {
-                return result;
-            } else {
-                result = true;
+                result = false;
             }
         }
         return result;
