@@ -15,7 +15,8 @@
     </properties>
 
     <modules>
-       <module>chapter_001</module>
+        <module>puzzle</module>
+        <module>chapter_001</module>
     </modules>
 	
 	<dependencies>
