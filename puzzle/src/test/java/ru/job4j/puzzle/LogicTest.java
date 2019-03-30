@@ -5,6 +5,11 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
+/**
+ * @author Valentin Kirjan (valekishwork@mail.ru).
+ * @version 0.1
+ * @since 30.03.19
+ */
 public class LogicTest {
     @Test
     public void whenVerticalWin() {

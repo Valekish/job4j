@@ -4,11 +4,9 @@ import ru.job4j.puzzle.figures.Cell;
 import ru.job4j.puzzle.figures.Figure;
 
 /**
- * //TODO add comments.
- *
- * @author Petr Arsentev (parsentev@yandex.ru)
- * @version $Id$
- * @since 0.1
+ * @author Valentin Kirjan (valekishwork@mail.ru).
+ * @version 0.1
+ * @since 30.03.19
  */
 public class Logic {
     private final int size;
