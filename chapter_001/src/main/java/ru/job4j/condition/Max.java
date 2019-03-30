@@ -13,7 +13,7 @@ public class Max {
      * @param right второе число.
      * @return ответ.
      */
-    public int max(int left, int right) {
+    public int maximum(int left, int right) {
         int result = left >= right ? left : right;
         return result;
     }
