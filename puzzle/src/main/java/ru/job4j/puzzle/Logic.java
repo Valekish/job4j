@@ -1,7 +1,7 @@
 package ru.job4j.puzzle;
 
-import ru.job4j.puzzle.firuges.Cell;
-import ru.job4j.puzzle.firuges.Figure;
+import ru.job4j.puzzle.figures.Cell;
+import ru.job4j.puzzle.figures.Figure;
 
 /**
  * //TODO add comments.
@@ -69,6 +69,28 @@ public class Logic {
     public boolean isWin() {
         int[][] table = this.convert();
         boolean result = false;
+        for (int index = 0; index < table.length; index++) {
+            for (int index2 = 0; index2 < table.length - 1; index2++) {
+                if (table[index][index2] != 1 || table[index][index2] != table[index][index2 + 1]) {
+                    break;
+                } else if (index2 == table.length - 2) {
+                    result = true;
+                    } else {
+                    continue;
+                }
+            }
+        }
+        for (int index = 0; index < table.length; index++) {
+            for (int index2 = 0; index2 < table.length - 1; index2++) {
+                if (table[index2][index] != 1 || table[index2][index] != table[index2 + 1][index]) {
+                    break;
+                } else if (index2 == table.length - 2) {
+                    result = true;
+                } else {
+                    continue;
+                }
+            }
+        }
         return result;
     }
 
