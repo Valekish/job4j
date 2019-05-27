@@ -1,6 +1,7 @@
 package ru.job4j.tracker;
 
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.Arrays;
 
 /**
  * @author Valentin Kirjan (valekishwork@mail.ru).
@@ -50,7 +51,7 @@ public class Tracker {
      * @return объект
      */
     public Item findById(String id) {
-        for (int p = 0; p < items.length; p++) {
+        for (int p = 0; p < this.position; p++) {
             if (items[p].getId().equals(id)) {
                 return items[p];
             }
@@ -65,9 +66,10 @@ public class Tracker {
      * @return результат операции
      */
     public boolean replace(String id, Item item) {
-        for (int p = 0; p < items.length; p++) {
+        for (int p = 0; p < this.position; p++) {
             if (items[p].getId().equals(id)) {
                 items[p] = item;
+                item.setId(id);
                 return true;
             }
         }
@@ -80,10 +82,11 @@ public class Tracker {
      * @return результат операции
      */
     public boolean delete(String id) {
-        for (int p = 0; p < items.length; p++) {
+        for (int p = 0; p < this.position; p++) {
             if (items[p].getId().equals(id)) {
                 items[p] = null;
-                System.arraycopy(items, p + 1, items, p, items.length - p - 1);
+                System.arraycopy(items, p + 1, items, p, this.position - p - 1);
+                this.position--;
                 return true;
             }
         }
@@ -95,18 +98,11 @@ public class Tracker {
      * @return массив объектов без null
      */
     public Item[] findAll() {
-        for (int p = 0; p < items.length; p++) {
-            if (items[p] == null) {
-                Item[] list = new Item[p];
-                System.arraycopy(items, 0, list, 0, p);
-                return list;
-            } else if (p == items.length - 1) {
-                Item[] list = new Item[p + 1];
-                System.arraycopy(items, 0, list, 0, p + 1);
-                return list;
+            if (this.position == 0) {
+                return null;
+            } else {
+                return Arrays.copyOf(this.items, this.position);
             }
-        }
-        return null;
     }
 
     /**
@@ -117,20 +113,12 @@ public class Tracker {
     public Item[] findByName(String key) {
         Item[] copy = new Item[100];
         int i = 0;
-        for (int p = 0; p < items.length; p++) {
-            if (items[p] == null) {
-                for (int a = 0; a < copy.length; a++) {
-                    if (copy[a] == null) {
-                        Item[] list = new Item[a];
-                        System.arraycopy(copy, 0, list, 0, a);
-                        return list;
-                    }
-                }
-            } else if (items[p].getName().equals(key)) {
-                System.arraycopy(items, p, copy, i, 1);
+        for (int p = 0; p < this.position; p++) {
+            if (items[p].getName().equals(key)) {
+                System.arraycopy(this.items, p, copy, i, 1);
                 i++;
             }
         }
-        return null;
+        return Arrays.copyOf(copy, i);
     }
 }
