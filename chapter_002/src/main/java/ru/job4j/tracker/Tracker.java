@@ -98,11 +98,7 @@ public class Tracker {
      * @return массив объектов без null
      */
     public Item[] findAll() {
-            if (this.position == 0) {
-                return null;
-            } else {
                 return Arrays.copyOf(this.items, this.position);
-            }
     }
 
     /**
